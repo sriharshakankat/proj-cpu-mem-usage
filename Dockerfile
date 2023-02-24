@@ -1,5 +1,5 @@
 # Use an official Python runtime as a parent image
-FROM python:3.9-slim
+FROM python:3
 
 # Set the working directory to /app
 WORKDIR /app
@@ -11,7 +11,7 @@ COPY . /app
 RUN pip install --trusted-host pypi.python.org -r requirements.txt
 
 # Define environment variable
-ENV NAME cpu_ram_usage
+ENV PYTHONUNBUFFERED=1
 
-# Run app.py when the container launches
-CMD ["python", "app.py"]
+# Continuously write the outputs to the JSON file every 5 seconds
+CMD [ "python", "app.py" ]

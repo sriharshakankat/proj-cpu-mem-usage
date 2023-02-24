@@ -8,13 +8,13 @@ It has a nginx proxy
 
 **Steps to build docker images** 
 
-`docker build -t python-container ./Dockerfile 
+`docker build -t python-container -f ./Dockerfile . 
 `
 
-`docker build -t nodejs-container ./nodejs/Dockerfile
+`docker build -t nodejs-container -f ./nodejs/Dockerfile .
 `
 
-`docker build -t nginx-container ./nginx/Dockerfile
+`docker build -t nginx-container -f ./nginx/Dockerfile .
 `
 
 **To run the built docker images** 
