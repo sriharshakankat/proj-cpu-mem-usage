@@ -18,6 +18,7 @@ It has a nginx proxy
 `
 
 **To run the built docker images** 
+
 `docker run --name python-container python-container
 `
 
@@ -27,4 +28,4 @@ It has a nginx proxy
 `docker run --name nginx-container -p 80:80 --link nodejs-container --link python-container nginx-container
 `
 
-
+Added Jenkins file to automate the run 
