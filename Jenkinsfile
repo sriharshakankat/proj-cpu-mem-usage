@@ -15,8 +15,8 @@ pipeline {
 
         stage('Push Docker Image') {
             steps {
-                withCredentials([usernamePassword(credentialsId: 'docker-hub', usernameVariable: 'DOCKER_USERNAME', passwordVariable: 'DOCKER_PASSWORD')]) {
-                    sh "docker login -u $DOCKER_USERNAME -p $DOCKER_PASSWORD"
+                withCredentials([usernamePassword(credentialsId: 'docker-hub', usernameVariable: 'Username', passwordVariable: 'Password')]) {
+                    sh "docker login -u $Username -p $Password"
                     sh "docker tag python-container $DOCKER_USERNAME/python-container"
                     sh "docker tag nodejs-container $DOCKER_USERNAME/nodejs-container"
                     sh "docker push $DOCKER_USERNAME/nodejs-container"
